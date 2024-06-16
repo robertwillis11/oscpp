@@ -8,6 +8,8 @@ endif ()
 set(CMAKE_CXX_STANDARD 11)
 set(CMAKE_C_STANDARD 99)
 
+include(GNUInstallDirs)
+
 add_library(oscpp INTERFACE
     include/oscpp/client.hpp
     include/oscpp/error.hpp
@@ -20,7 +22,7 @@ add_library(oscpp INTERFACE
     include/oscpp/detail/stream.hpp
 )
 
-target_include_directories(oscpp INTERFACE /include/)
+target_include_directories(oscpp INTERFACE ${CMAKE_CURRENT_SOURCE_DIR}/include)
 
 enable_testing()
 
