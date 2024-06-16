@@ -8,6 +8,20 @@ endif ()
 set(CMAKE_CXX_STANDARD 11)
 set(CMAKE_C_STANDARD 99)
 
+add_library(oscpp INTERFACE
+    include/oscpp/client.hpp
+    include/oscpp/error.hpp
+    include/oscpp/print.hpp
+    include/oscpp/server.hpp
+    include/oscpp/types.hpp
+    include/oscpp/util.hpp
+    include/oscpp/detail/endian.hpp
+    include/oscpp/detail/host.hpp
+    include/oscpp/detail/stream.hpp
+)
+
+target_include_directories(oscpp INTERFACE /include/)
+
 enable_testing()
 
 add_subdirectory(test)
